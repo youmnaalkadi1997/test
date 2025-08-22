@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -15,31 +15,34 @@ public class Main {
         //  System.out.println(result);
         // scanner.close();
 
-        System.out.println("Add: " + add(5, 3));
-        System.out.println("Subtract: " + subtract(10, 4));
-        System.out.println("Multiply: " + multiply(6, 7));
-        System.out.println("Divide: " + divide(10, 2));
-        System.out.println("Divide durch 0: " + divide(10, 0));
-
-    }
-
-        public static int add(int a, int b) {
-            return a + b;
+        int [] numbers = {50,3,89,44,26,87,2,33,76,40};
+        System.out.println("Array before:");
+        for (int number : numbers) {
+            System.out.print(number + " ");
         }
 
-        public static int subtract(int a, int b) {
-            return a - b;
-        }
+        System.out.println();
 
-        public static int multiply(int a, int b) {
-            return a * b;
-        }
+        Arrays.sort(numbers);
 
-        public static double divide(double a, double b) {
-            if (b == 0) {
-                System.out.println("Fehler: Division durch 0 ist nicht erlaubt!");
-                return Double.NaN;
-            }
-            return a / b;
+        System.out.println("Array after:");
+        for (int number : numbers) {
+            System.out.print(number + " ");
         }
-}
+        System.out.println();
+
+        int min = numbers[0];
+        int max = numbers[numbers.length - 1];
+        int summe = 0;
+
+        for (int number : numbers) {
+            summe += number;
+        }
+        double durchschnitt = (double) summe / numbers.length;
+        System.out.println("Minimum: " + min);
+        System.out.println("Maximum: " + max);
+        System.out.println("Durchschnitt: " + durchschnitt);
+
+
+
+    } }
